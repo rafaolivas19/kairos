@@ -10,6 +10,10 @@ The name comes from the Greek word *kairos*, which represents the right or oppor
 * Vite
 * shadcn/ui
 
+## Live Demo
+
+You can access the live demo of Kairos at: [https://kairos-rafaolivas.web.app/](https://kairos-rafaolivas.web.app/)
+
 ## License
 
 MIT License
