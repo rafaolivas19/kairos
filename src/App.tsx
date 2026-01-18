@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import { ThemeProvider } from './components/ui/theme-provider'
 import { CopyInput } from './components/ui/copy-input'
 
@@ -26,7 +25,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className='h-screen w-screen flex items-center justify-center'>
-        <div className='w-150 p-10 flex flex-col gap-4 bg-popover rounded-sm'>
+        <div className='w-150 p-2 sm:p-10 flex flex-col gap-4 bg-popover rounded-sm'>
           <CopyInput
             key='friendly-date-time'
             value={currentDate?.toLocaleString(DEFAULT_LOCALE, {
@@ -39,6 +38,7 @@ function App() {
               second: '2-digit',
               hour12: true,
             })}
+            fontSize='text-xs sm:text-md'
           ></CopyInput>
           <CopyInput
             key='local-date'
@@ -48,6 +48,7 @@ function App() {
               month: 'long',
               day: 'numeric',
             })}
+            fontSize='text-xs sm:text-md'
           ></CopyInput>
           <CopyInput
             key='local-time'
@@ -57,6 +58,7 @@ function App() {
               second: '2-digit',
               hour12: true,
             })}
+            fontSize='text-xs sm:text-md'
           ></CopyInput>
           <CopyInput
             key='epoch-seconds'
@@ -65,6 +67,7 @@ function App() {
                 ? Math.floor(currentDate.getTime() / 1000).toString()
                 : undefined
             }
+            fontSize='text-xs sm:text-md'
           ></CopyInput>
           <CopyInput
             key='epoch-ms'
@@ -73,6 +76,7 @@ function App() {
                 ? currentDate.getTime().toString()
                 : undefined
             }
+            fontSize='text-xs sm:text-md'
           ></CopyInput>
         </div>
       </div>

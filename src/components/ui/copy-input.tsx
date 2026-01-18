@@ -3,12 +3,13 @@ import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "
 import { useState } from "react"
 
 type CopyInputProps = {
-  key: string
+  key?: string
   value: string | undefined
+  fontSize?: string
 }
 
 export const CopyInput = (props: CopyInputProps) => {
-  const { key, value } = props
+  const { key, value, fontSize } = props
   const [isCopied, setIsCopied] = useState(false)
 
   const copyToClipboard = (text: string) => {
@@ -23,7 +24,8 @@ export const CopyInput = (props: CopyInputProps) => {
   return (
     <InputGroup key={key}>
       <InputGroupInput
-        placeholder={value}
+        className={fontSize}
+        value={value}
         readOnly
       />
       <InputGroupAddon align="inline-end">
