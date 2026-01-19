@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ThemeProvider } from './components/ui/theme-provider'
 import { CopyInput } from './components/ui/copy-input'
+import { formatYYMMDDHHMM, formatYYMMDDHHMMSS } from './utils/date-format.utils'
 
 const DEFAULT_LOCALE:Intl.LocalesArgument =
   navigator.languages?.[0] ??
@@ -74,6 +75,24 @@ function App() {
             value={
               currentDate
                 ? currentDate.getTime().toString()
+                : undefined
+            }
+            fontSize='text-xs sm:text-md'
+          ></CopyInput>
+          <CopyInput
+            key='yyMMddhhmm'
+            value={
+              currentDate
+                ? formatYYMMDDHHMM(currentDate)
+                : undefined
+            }
+            fontSize='text-xs sm:text-md'
+          ></CopyInput>
+          <CopyInput
+            key='yyMMddhhmmss'
+            value={
+              currentDate
+                ? formatYYMMDDHHMMSS(currentDate)
                 : undefined
             }
             fontSize='text-xs sm:text-md'
