@@ -37,7 +37,7 @@ export const CopyInput = (props: CopyInputProps) => {
             copyToClipboard(value || "")
           }}
         >
-          {isCopied ? <IconCheck /> : <IconCopy />}
+          {isCopied ? <IconCheck className="text-green-700" /> : <IconCopy />}
         </InputGroupButton>
       </InputGroupAddon>
     </InputGroup>
